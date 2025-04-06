@@ -4,7 +4,11 @@ import "./styles.css";
 import WhatIsDOS from "./components/ui/WhatIsDOS";
 import { HeroParallax } from "./components/ui/Parallax";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 export default function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to top-left corner
+  }, []);
   //
   const products = [
     {
@@ -105,13 +109,13 @@ export default function App() {
 
 
   const layerVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, scale: 1.8 },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 2.5,
-        ease: [0.6, -0.05, 0.01, 0.99],
+        duration: 2.0,
+        // ease: [0.6, -0.05, 0.01, 0.99],
       },
     },
   };
@@ -129,26 +133,26 @@ export default function App() {
       </motion.div>
 
       {/* Layer 2: Middle */}
-      <motion.div
+      {/* <motion.div
         variants={layerVariants}
         initial="hidden"
         animate="visible"
         transition={{ delay: 0.2 }}
         style={{ zIndex: 2, position: "relative" }}
-      >
+      > */}
         <WhatIsDOS />
-      </motion.div>
+      {/* </motion.div> */}
 
       {/* Layer 3: Foreground */}
-      <motion.div
+      {/* <motion.div
         variants={layerVariants}
         initial="hidden"
         animate="visible"
         transition={{ delay: 0.4 }}
         style={{ zIndex: 3, position: "relative" }}
-      >
+      > */}
         <HeroParallax products={products} />
-      </motion.div>
+      {/* </motion.div> */}
     </div>
   );
 }
