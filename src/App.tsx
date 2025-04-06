@@ -115,10 +115,14 @@ export default function App() {
       scale: 1,
       transition: {
         duration: 2.0,
-        // ease: [0.6, -0.05, 0.01, 0.99],
+        ease: "linear",
+        type: "spring",
+        damping: 8,
       },
     },
   };
+
+
 
   return (
     <div className="App bg-black">
