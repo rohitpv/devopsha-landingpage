@@ -102,15 +102,7 @@ export default function App() {
     },
   ];
   //
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.4, // Stagger for sequential popping
-      },
-    },
-  };
+
 
   const layerVariants = {
     hidden: { opacity: 0, scale: 0.8 },
