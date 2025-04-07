@@ -108,55 +108,22 @@ export default function App() {
   //
 
 
-  const layerVariants = {
-    hidden: { opacity: 0, scale: 1.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 2.0,
-        ease: "linear",
-        type: "spring",
-        damping: 8,
-      },
-    },
-  };
 
 
 
   return (
     <div className="App bg-black">
       {/* Layer 1: Background */}
-      <motion.div
-        variants={layerVariants}
-        initial="hidden"
-        animate="visible"
-        style={{ zIndex: 1, position: "relative" }}
-      >
+      
         <SparklesPreview />
-      </motion.div>
 
       {/* Layer 2: Middle */}
-      {/* <motion.div
-        variants={layerVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.2 }}
-        style={{ zIndex: 2, position: "relative" }}
-      > */}
+      
         <WhatIsDOS />
-      {/* </motion.div> */}
 
       {/* Layer 3: Foreground */}
-      {/* <motion.div
-        variants={layerVariants}
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.4 }}
-        style={{ zIndex: 3, position: "relative" }}
-      > */}
+      
         <HeroParallax products={products} />
-      {/* </motion.div> */}
     </div>
   );
 }
